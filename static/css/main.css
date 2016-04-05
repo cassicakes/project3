@@ -13,18 +13,61 @@ video#bgvid {
     background: url() no-repeat;
     background-size: cover; 
 }
-
-#logo {
-  text-align: center;
-  margin-top: 2px;
-
+ /*all nav bar*/
+#nav {
+    background-color: transparent;
+    margin-bottom: 0px;
+    border: 0px;
+    color: #4A4938;
 }
 
+.navbar-default .navbar-nav>li>a {
+    color: #4A4938;
+}
 
+#logo {
+    text-align: center;
+    margin-top: 2%;
+}
 
+#navlogo {
+    height: 27px;
+    width: 124px;
+    margin-top: 10px;
+}
 
+body { 
+    padding-top: 50px; /*this is for fixed nav bar*/
+    font-family: 'Kalam', cursive;
+}
 
+button {
+    border-radius: 10px;
+}
 
+/*login page*/
+#loginwell {
+    background-color: #4A4938;
+    border: 0;
+    width: 22%;
+    color: #B93717;
+    text-align: left;
+    font-size: 22px;
+    margin-top: 85px;
+    margin-left: 11%;
+}
+
+#loginimg {
+    height: 70px;
+    width: 70px;
+    float: right;
+}
+
+#logintitle {
+    margin-top: 8px;
+    text-align: left;
+
+}
 
 
 
