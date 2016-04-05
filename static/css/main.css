@@ -1,0 +1,42 @@
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url() no-repeat;
+    background-size: cover; 
+}
+
+#logo {
+  text-align: center;
+  margin-top: 2px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('./images/backgroundshot.png') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
