@@ -8,15 +8,16 @@
 
 </style>
 
-<h1>Sign Up</h1>
-<form>
-  <div class="well">
+<form method="POST">
+  <div class="well" id="signupwell">
+  <h1>Sign Up</h1>
+      <label>Name</label>
+      <input type="text" class="form-control" name="name"><br>
       <label>Email</label>
-      <input type="text" class="form-control" id="" name="email"><br>
+      <input type="text" class="form-control" name="email"><br>
       <label>Password</label>
-      <input type="password" class="form-control" placeholder="Password"> <br>
-      <input type="password" class="form-control" placeholder="Retype Password">
+      <input type="password" class="form-control" placeholder="Password" name="password1"> <br>
+      <input type="password" class="form-control" placeholder="Retype Password" name="password2">
+      <button type="submit" class="allButton">Create Profile</button>
   </div>
-
-  <button type="submit" class="allButton">Create Profile</button>
 </form>

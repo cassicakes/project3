@@ -12,32 +12,32 @@
     text-shadow: 0 1px 1px rgba(0,0,0,.7)
 }
 
+#nav {
+  margin-top: 6px;
+}
+
 #navlogo {
     height: 35px;
     width: 139px;
     margin-top: 5px;
 }
-.form-control {
+/*.form-control {
 
   height: 30px !important;
   width: 220px !important;
   font-size: 14px !important;
 
-}
+}*/
 
 </style>
-
-<form class="well" id="loginwell">
-  <img id="loginimg"src="/images/starlogo.png">
-  <h1 id="logintitle">Login</h1>
-  <div class="container">
-  <div class="form-group">
-  <label for="">Email:</label>
-  <input type="text" class="form-control" name="email">
-  <label for="">Password:</label>
-  <input type="password" class="form-control" name="password">
+<form method="POST">
+  <div class="well" id="loginwell">
+    <img id="loginimg"src="/images/starlogo.png">
+    <h1 id="logintitle">Login</h1>
+    <label for="">Email:</label>
+    <input type="text" class="form-control" name="email">
+    <label for="">Password:</label>
+    <input type="password" class="form-control" name="password">
+    <button type="submit">Log In</button>
   </div>
-  </div>
-  <button type="submit">Log In</button>
-  
 </form>

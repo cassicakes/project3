@@ -20,25 +20,40 @@ video#bgvid {
     border: 0px;
     color: #4A4938;
 }
-
 .navbar-default .navbar-nav>li>a {
     color: #4A4938;
 }
-
-#logo {
-    text-align: center;
-    margin-top: 2%;
-}
-
 #navlogo {
     height: 27px;
     width: 124px;
     margin-top: 10px;
 }
 
+/*home page */
+#logo {
+    text-align: center;
+    margin-top: 2%;
+}
+#pitch {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 125px;
+    margin-top: -10px;
+}
+.groupbtns {
+    text-align: center;
+}
+.indexbtns {
+    margin-right: auto;
+    margin-top: 2%;
+    height: 90px;
+    padding: 2px 30px 2px 30px;
+}
+
 body { 
     padding-top: 50px; /*this is for fixed nav bar*/
-    font-family: 'Kalam', cursive;
+   font-family: 'Fjalla One', sans-serif;
 }
 
 button {
@@ -49,24 +64,33 @@ button {
 #loginwell {
     background-color: #4A4938;
     border: 0;
-    width: 22%;
+    width: 32%;
     color: #B93717;
     text-align: left;
     font-size: 22px;
     margin-top: 85px;
     margin-left: 11%;
 }
-
 #loginimg {
     height: 70px;
     width: 70px;
     float: right;
 }
-
 #logintitle {
     margin-top: 8px;
     text-align: left;
+}
 
+/*sign up page*/
+#signupwell {
+    background-color: #4A4938;
+    border: 0;
+    width: 32%;
+    color: #B93717;
+    text-align: left;
+    font-size: 22px;
+    margin-top: 85px;
+    margin-left: 8%;
 }
 
 
