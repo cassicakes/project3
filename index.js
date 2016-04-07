@@ -22,6 +22,12 @@ app.use(session({
 }));
 app.use(ejsLayouts);
 app.use(flash());
+
+app.use(function (req, res, next) {
+   res.locals.session = req.session;
+   next();
+});
+
 app.use('radio', radioCtrl); //NEED HELP WITH THIS
 
 app.get('/', function(req, res) {
@@ -29,7 +35,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/profile', function (req, res) {
-  res.render('profile', {alerts: req.flash()});
+  User.findById(req.session.user._id, function(err, user) {
+  res.render('profile', {alerts: req.flash(), user: user});
+
+  })
 });
 
 app.get('/results', function (req, res) {
@@ -53,17 +62,29 @@ app.post('/login', function (req, res) {
       req.flash('danger', "Could not find user.");
       res.redirect('/login');
       return
-    }
-    if (user.password === req.body.password) {
-      req.flash('success', "Music lover logged in.");
-      req.session.user = user;
-      res.redirect('/profile');
-      return
-    } else {
-      req.flash('danger', "Incorrect Password.");
-      res.redirect('/profile');
-      return
-    }
+    } 
+    user.comparePassword(req.body.password, function(err, isMatch) {
+      if (err || !isMatch) {
+        req.flash('danger', "Incorrect Password.");
+        res.redirect('/login');
+        return
+      } else {
+        req.flash('success', "Music lover logged in.");
+        req.session.user = user;
+        res.redirect('/profile');
+        return
+      }
+    });
+    // if (user.password === req.body.password) {
+    //   req.flash('success', "Music lover logged in.");
+    //   req.session.user = user;
+    //   res.redirect('/profile');
+    //   return
+    // } else {
+    //   req.flash('danger', "Incorrect Password.");
+    //   res.redirect('/profile');
+    //   return
+    // }
   })
 });
 
@@ -145,6 +166,19 @@ app.get('/details/:id', function (req, res) {
       res.redirect('/profile');
     }
   });
+});
+
+app.post('/addtofavs', function (req, res) {
+  if (req.session.user) {
+    User.findById(req.session.user._id, function(err, user) {
+    user.favs.push(req.body);
+    user.save();
+    res.redirect('/profile'); 
+    });
+  } else {
+    req.flash('danger', "You gotta login MAN!")
+    res.redirect('/login');
+  }
 });
 
 
