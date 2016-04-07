@@ -1,0 +1,22 @@
+<style type="text/css">
+  body {
+    background: 
+      url("/images/loosetape.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color:;
+    margin-top: 5%;
+  }
+
+</style>
+
+<h1>Results</h1>
+<% artists.items.forEach(function(artist) { %>
+<div class="well">
+<img src="<%= artist.images[0].url%>">
+<%= artist.name %>
+<a href="/details/<%= artist.id %>">
+<button type="submit" class="allbuttons">More Info!</button></a>
+</div>
+<% }); %>

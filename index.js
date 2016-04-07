@@ -32,8 +32,8 @@ app.get('/profile', function (req, res) {
   res.render('profile', {alerts: req.flash()});
 });
 
-app.get('/search', function (req, res) {
-  res.render('search');
+app.get('/results', function (req, res) {
+  res.render('results');
 });
 
 app.get('/login', function (req, res) {
@@ -112,12 +112,32 @@ app.post('/signup', function (req, res) {
   })
 });
 
+app.get("/search", function (req, res ) {
+  var artist = req.query.artist
+  request('https://api.spotify.com/v1/search?type=artist&q=' + artist, function(err, response, body) {
+    if (!err && response.statusCode === 200) {
+      res.render('results', { artists: JSON.parse(body).artists});
+    } else {
+      req.flash('danger', "Error getting ya data yo!")
+      res.redirect('/profile');
+    }
+  });
+});
+
 app.get('/secret', function (req, res) {
   res.render('secret');
 });
 
-app.get('/details', function (req, res) {
-  res.render('details');
+app.get('/details/:id', function (req, res) {
+
+  request('https://api.spotify.com/v1/artists/' + req.params.id, function(err, response, body) {
+    if (!err && response.statusCode === 200) {
+      res.render('details', { artist: JSON.parse(body)});
+    } else {
+      req.flash('danger', "Error getting ya data yo!")
+      res.redirect('/profile');
+    }
+  });
 });
 
 

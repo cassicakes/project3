@@ -10,8 +10,24 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url() no-repeat;
+    background: url("/images/backgroundshot.png") no-repeat;
     background-size: cover; 
+}
+
+input::-webkit-input-placeholder {
+color: #B93717 !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: #B93717 !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #B93717 !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: #B93717 !important;  
 }
  /*all nav bar*/
 #nav {
@@ -28,7 +44,19 @@ video#bgvid {
     width: 124px;
     margin-top: 10px;
 }
+#inputform {
+    background-color: #979797;
+    border-color: #B93717;
+    color: #4a4938;
+}
+.navbar-form {
 
+}
+#searchbtn {
+    background-color: #417e99;
+    border-color: #B93717;
+    color: #4a4938;
+}
 /*home page */
 #logo {
     text-align: center;
@@ -51,13 +79,30 @@ video#bgvid {
     padding: 2px 30px 2px 30px;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body { 
     padding-top: 50px; /*this is for fixed nav bar*/
    font-family: 'Fjalla One', sans-serif;
+    background-image: url("/images/backgroundshot.png");
+    height: 100%;
+    width: 100%;
+
+
 }
 
-button {
-    border-radius: 10px;
+.allbuttons {
+    border-radius: 5px;
+    margin-top: 11px;
+
+}
+.opcbg {
+    height: 125%;
+    width: 100%;
+    background-color: rgba(130, 125, 82, 0.6);
 }
 
 /*login page*/
@@ -68,17 +113,13 @@ button {
     color: #B93717;
     text-align: left;
     font-size: 22px;
-    margin-top: 85px;
+    margin-top: 130px;
     margin-left: 11%;
 }
 #loginimg {
-    height: 70px;
-    width: 70px;
-    float: right;
-}
-#logintitle {
-    margin-top: 8px;
-    text-align: left;
+    height: 100px;
+    width: 170px;
+    margin-top: -70px;
 }
 
 /*sign up page*/
@@ -89,11 +130,73 @@ button {
     color: #B93717;
     text-align: left;
     font-size: 22px;
-    margin-top: 85px;
+    margin-top: 100px;
     margin-left: 8%;
 }
+#signuplogo {
+    height: 90px;
+    width: 170px;
+    margin-top: -63px;
+}
 
+/*profile page*/
 
+#profilewell {
+    background-color: #D8D8D8;
+    border: 0;
+    width: 65%;
+    min-height: 200px;
+    height: 50%;
+    color: #B93717;
+    /*font-size: 22px;*/
+    position: relative;
+    top: 130px;
+    margin: 0 auto !important;
+    /*margin-left: 8%;*/
+/*    margin-top: 130px;
+*/    /*margin-left: 8%;*/
+}
+/*.profile {
+    text-align: center;
+
+}*/
+#profilelogo {
+    height: 170px;
+    width: 365px;
+    margin-top: -86px;
+}
+#favoriteswell {
+    background-color: #D8D8D8;
+    border: 0;
+    width: 65%;
+    min-height: 200px;
+    height: 50%;
+    color: #B93717;
+    /*font-size: 22px;*/
+    position: relative;
+    top: 130px;
+    margin: 2% auto !important;
+    /*margin-left: 8%;*/
+}
+#favoriteslogo {
+    height: 170px;
+    width: 365px;
+    margin-top: -86px;
+    float: right;
+    /*margin-left: 238px;*/
+}
+
+/*band details page */
+#detailswell {
+    display: flex;
+    justify-content: center;
+    margin-top: 118px;  
+}
+#detailslogo {
+    height: 170px;
+    width: 365px;
+    margin-top: -92px;  
+}
 
 
 
