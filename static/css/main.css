@@ -13,7 +13,7 @@ video#bgvid {
     background: url("/images/backgroundshot.png") no-repeat;
     background-size: cover; 
 }
-
+/*place holder mods*/
 input::-webkit-input-placeholder {
 color: #B93717 !important;
 }
@@ -60,14 +60,14 @@ color: #B93717 !important;
 /*home page */
 #logo {
     text-align: center;
-    margin-top: 2%;
+    margin-top: 3%;
 }
 #pitch {
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: 125px;
-    margin-top: -10px;
+    /*margin-top: -10px;*/
 }
 .groupbtns {
     text-align: center;
@@ -75,8 +75,14 @@ color: #B93717 !important;
 .indexbtns {
     margin-right: auto;
     margin-top: 2%;
-    height: 90px;
+    height: 55px;
     padding: 2px 30px 2px 30px;
+}
+#pitchdiv {
+    border-bottom-width: .5px;
+    border-bottom: solid #B93717;
+    border-radius: 20px;
+    width: 425px;
 }
 
 html {
@@ -104,6 +110,11 @@ body {
     width: 100%;
     background-color: rgba(130, 125, 82, 0.6);
 }
+.opcbgsingup {
+   height: 125%;
+    width: 100%;
+    background-color: rgba(130, 125, 82, 0.8); 
+}
 
 /*login page*/
 #loginwell {
@@ -114,11 +125,11 @@ body {
     text-align: left;
     font-size: 22px;
     margin-top: 130px;
-    margin-left: 11%;
+    margin-left: 6%;
 }
 #loginimg {
-    height: 100px;
-    width: 170px;
+    height: 124px;
+    width: 230px;
     margin-top: -70px;
 }
 
@@ -130,8 +141,10 @@ body {
     color: #B93717;
     text-align: left;
     font-size: 22px;
-    margin-top: 100px;
+    /*margin-top: 100px;*/
     margin-left: 8%;
+    /*top: 130px;*/
+    margin: 6% auto !important;
 }
 #signuplogo {
     height: 90px;

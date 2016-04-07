@@ -7,7 +7,7 @@ var request = require('request');
 var session = require('express-session');
 var flash = require('connect-flash');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/hash-rocket');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/hash-rocket');
 
 var User = require('./models/user')
 
@@ -130,9 +130,16 @@ app.get('/secret', function (req, res) {
 
 app.get('/details/:id', function (req, res) {
 
-  request('https://api.spotify.com/v1/artists/' + req.params.id, function(err, response, body) {
+  request('https://api.spotify.com/v1/artists/' + req.params.id + "/related-artists", function(err, response, body) {
     if (!err && response.statusCode === 200) {
-      res.render('details', { artist: JSON.parse(body)});
+      request('https://api.spotify.com/v1/artists/' + req.params.id, function(err2, response2, body2) {
+        if (!err2 && response2.statusCode === 200) {
+         res.render('details', { artist: JSON.parse(body2), related: JSON.parse(body)}); 
+        } else {
+          req.flash('danger', "Error getting ya data yo!")
+          res.redirect('/profile');
+        }
+      })    
     } else {
       req.flash('danger', "Error getting ya data yo!")
       res.redirect('/profile');
