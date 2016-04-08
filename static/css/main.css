@@ -213,8 +213,8 @@ body {
     height: 170px;
     width: 365px;
     /*margin-top: -92px;  */
-
     margin-bottom: -110px;
+     display: inline-block;
 }
 #relatedwell {
     display: flex;

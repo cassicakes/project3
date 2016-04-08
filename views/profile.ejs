@@ -22,14 +22,14 @@
     <div class="container">
     <div class="well" id="profilewell">
       <img id="profilelogo" src="/images/profilelogo.png">
-      <%= user.name %>
+      <h1><%= user.name %></h1>
     </div>
   <!-- favorites well  -->
     <div class="well" id="favoriteswell">
       <img id="favoriteslogo"src="/images/favoriteslogo.png">
       <% user.favs.forEach(function(fav) { %>
       <div>
-        <%= fav.name %>
+        <h3><%= fav.name %></h3>
         <a href="/details/<%= fav.id %>">
           <button type="submit" class="allbuttons">More Info!</button>
         </a>

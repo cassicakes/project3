@@ -1,6 +1,6 @@
 # Hash Rocket
 
-![Screen Shot](/images/siteShot.png)
+![Screen Shot](https://github.com/cassicakes/project4/blob/master/static/images/siteShot.png)
 
 ##Technologies:
 * express
@@ -64,9 +64,9 @@ https://github.com/cassicakes/project4/blob/master/static/images/Detailed%20Resu
 
 ## User Story
 As a music lover I want to search for my favorite artist
-  Save them to a profile 
-  see realted artists based on favorite artist and get info about them
-  Stay in the know about favorite artists
+  -Save them to a profile 
+  -See realted artists based on favorite artist and get info about them
+  -Stay in the know about favorite artists
 
 # App link
 
