@@ -1,3 +1,4 @@
+
 <style type="text/css">
   body {
     background: 
@@ -27,39 +28,37 @@ h1 {
 <!-- current artist -->
 <div class="container">
   <img id="detailslogo" src="/images/banddetailslogo.png">
-
   <div  id="detailswell">
     <img class="bandimg" src="<%= artist.images[0].url%>">
-  <div>
-     <h1><%= artist.name %></h1>
-     <form method="POST" action="/addtofavs">
-          <input type="hidden" name="id" value="<%= artist.id %>">
-          <input type="hidden" name="name" value="<%= artist.name %>">
-          <button type="submit" class="allbuttons">Add to favs</button>
-        </form>
+    <div>
+      <h1><%= artist.name %></h1>
+      <form method="POST" action="/addtofavs">
+        <input type="hidden" name="id" value="<%= artist.id %>">
+        <input type="hidden" name="name" value="<%= artist.name %>">
+        <button type="submit" class="allbuttons">Add to favs</button>
+      </form>
     </div>
   </div>
   <!-- related artist -->
   <img id="relatedartistlogo" src="/images/relatedartistlogo.png">
-
   <div  id="relatedwell">
     <% related.artists.forEach(function(artist) { %>
       <div class="well">
-         <h2><%= artist.name %></h2>
+        <h2><%= artist.name %></h2>
         <% if (artist.images&& artist.images[0]) {%>
           <img src="<%= artist.images[0].url%>">
         <%}else {%>
           No image available
         <% } %>
         <div id="detailsbtns">
-        <form method="POST" action="/addtofavs">
-          <input type="hidden" name="id" value="<%= artist.id %>">
-          <input type="hidden" name="name" value="<%= artist.name %>">
-          <button type="submit" class="allbuttons">Add to favs</button>
-        </form>
-        <a href="/details/<%= artist.id %>">
-          <button type="submit" class="allbuttons">More Info!</button>
-        </a>
+          <form method="POST" action="/addtofavs">
+            <input type="hidden" name="id" value="<%= artist.id %>">
+            <input type="hidden" name="name" value="<%= artist.name %>">
+            <button type="submit" class="allbuttons">Add to favs</button>
+          </form>
+          <a href="/details/<%= artist.id %>">
+            <button type="submit" class="allbuttons">More Info!</button>
+          </a>
         </div>
       </div>
     <% }); %>

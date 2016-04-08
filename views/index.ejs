@@ -1,18 +1,25 @@
-
+<!-- background video -->
 <video id="bgvid" loop muted autoplay poster="/images/backgroundshot.png" class="fullscreen-bg__video">
     <source src="" type="video/webm">
     <source src="/images/videos/tape.mp4" type="video/mp4">
 </video>
+
+
 <div class="container text-center">
-<div id="logo">
-  <img src="/images/hrLogo1.png" alt="logo">
-</div>
-<div class="container text-center" id="pitchdiv">
-  <img id="pitch" src="/images/pitch.png">
-</div>
-<% if ( !session.user || !session.user.name) { %>
-  <div class="groupbtns">
-    <a href="/signup"><img class="indexbtns" src="/images/signupbtn.png"></a><a href="/login"><img class="indexbtns" src="/images/loginbtn.png"></a>
+  <div id="logo">
+    <img src="/images/hrLogo1.png" alt="logo">
   </div>
-<%}%>
+  <div class="container text-center" id="pitchdiv">
+    <img id="pitch" src="/images/pitch.png">
+  </div>
+  <% if ( !session.user || !session.user.name) { %>
+    <div class="groupbtns">
+      <a href="/signup">
+        <img class="indexbtns" src="/images/signupbtn.png">
+      </a>
+      <a href="/login">
+        <img class="indexbtns" src="/images/loginbtn.png">
+      </a>
+    </div>
+  <%}%>
 </div>
