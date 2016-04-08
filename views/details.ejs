@@ -15,37 +15,52 @@ img {
   height: 200px;
   width: 200px;
 }
+h1 {
+  text-align: center;
+}
 </style>
 
 <!-- current artist -->
 <div class="container">
-  <div class="well" id="detailswell">
-    <img id="detailslogo" src="/images/banddetailslogo.png">
-    <img src="<%= artist.images[0].url%>">
-    <%= artist.name %>
+  <img id="detailslogo" src="/images/banddetailslogo.png">
+
+  <div  id="detailswell">
+    <img class="bandimg" src="<%= artist.images[0].url%>">
+  <div>
+     <h1><%= artist.name %></h1>
+     <form method="POST" action="/addtofavs">
+          <input type="hidden" name="id" value="<%= artist.id %>">
+          <input type="hidden" name="name" value="<%= artist.name %>">
+          <button type="submit" class="allbuttons">Add to favs</button>
+        </form>
+    </div>
   </div>
   <!-- related artist -->
-  <div class="well" id="relatedwell">
+  <img id="relatedartistlogo" src="/images/relatedartistlogo.png">
+
+  <div  id="relatedwell">
     <% related.artists.forEach(function(artist) { %>
       <div class="well">
+         <h2><%= artist.name %></h2>
         <% if (artist.images&& artist.images[0]) {%>
           <img src="<%= artist.images[0].url%>">
         <%}else {%>
           No image available
         <% } %>
-        <%= artist.name %>
-        <!--<%= JSON.stringify(artist)%> to see what is returned from API-->
-        <a href="/details/<%= artist.id %>">
-          <button type="submit" class="allbuttons">More Info!</button>
-        </a>
+        <div id="detailsbtns">
         <form method="POST" action="/addtofavs">
           <input type="hidden" name="id" value="<%= artist.id %>">
           <input type="hidden" name="name" value="<%= artist.name %>">
           <button type="submit" class="allbuttons">Add to favs</button>
         </form>
+        <a href="/details/<%= artist.id %>">
+          <button type="submit" class="allbuttons">More Info!</button>
+        </a>
+        </div>
       </div>
     <% }); %>
   </div>
 </div>
 
+<!--<%= JSON.stringify(artist)%> to see what is returned from API-->
 

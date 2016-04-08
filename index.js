@@ -75,16 +75,6 @@ app.post('/login', function (req, res) {
         return
       }
     });
-    // if (user.password === req.body.password) {
-    //   req.flash('success', "Music lover logged in.");
-    //   req.session.user = user;
-    //   res.redirect('/profile');
-    //   return
-    // } else {
-    //   req.flash('danger', "Incorrect Password.");
-    //   res.redirect('/profile');
-    //   return
-    // }
   })
 });
 

@@ -204,14 +204,41 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 118px;  
+    border-bottom-width: .5px;
+    border-bottom: solid #B93717;
+    border-radius: 20px;
+    padding-bottom: 3px;
 }
 #detailslogo {
     height: 170px;
     width: 365px;
-    margin-top: -92px;  
+    /*margin-top: -92px;  */
+
+    margin-bottom: -110px;
 }
 #relatedwell {
-    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 118px; 
+    background-color: none; 
+}
+#relatedartistlogo {
+    height: 170px;
+    width: 365px;
+    /*margin-top: -92px;  */
+    text-align: center;
+
+    margin-bottom: -110px;
+}
+#detailsbtns {
+    display: flex;
+    justify-content: center;
+    margin: 3px;
+}
+.bandimg {
+    height: 400px;
+    width: 400px;
 }
 
 
