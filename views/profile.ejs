@@ -20,6 +20,10 @@ body {
     <div class="well" id="profilewell">
       <img id="profilelogo" src="/images/profilelogo.png">
       <h1><%= user.name %></h1>
+      <form action="/profile" method="POST">
+        <textarea placeholder="Tell Us About Youself" name="aboutMe" ></textarea>
+        <button type="submit" class="allbuttons">Submit</button>
+      </form>
     </div>
   <!-- favorites well  -->
     <div class="well" id="favoriteswell">

@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/static'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(session({
- secret:'3da6f15641a9a688457d114185f91ea907b4f7d5f793770baf5ae',
+ secret: process.env.SECRET,
  resave: false,
  saveUninitialized: true
 }));
@@ -35,10 +35,29 @@ app.get('/', function(req, res) {
 });
 
 app.get('/profile', function (req, res) {
+  if (!req.session.user) {
+    res.redirect('/');
+    return
+  }
   User.findById(req.session.user._id, function(err, user) {
   res.render('profile', {alerts: req.flash(), user: user});
 
   })
+});
+
+app.post('/profile', function (req, res) {
+  if (!req.session.user) { //checking that someone is logged in before getting to this page
+    res.redirect('/');
+    return
+  }
+  var about = req.body.aboutMe;
+  User.findOneAndUpdate({
+    _id: req.session.user._id
+  },{ 
+    about: about 
+  }, function(err, doc){
+    res.redirect('/profile')
+  }) 
 });
 
 app.get('/results', function (req, res) {
@@ -51,7 +70,7 @@ app.get('/login', function (req, res) {
 
 app.post('/login', function (req, res) {
   User.findOne({
-    email: req.body.email, //PUT PW IN AFTER ENCRYPT
+    email: req.body.email, 
   }, function(err, user) {
     if (err) {
       req.flash('danger', "Try again, we suck right now.");
