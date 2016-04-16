@@ -21,7 +21,7 @@ body {
       <img id="profilelogo" src="/images/profilelogo.png">
       <h1><%= user.name %></h1>
       <form action="/profile" method="POST">
-        <textarea placeholder="Tell Us About Youself" name="aboutMe" ></textarea>
+        <textarea placeholder="Tell Us About Youself" name="aboutMe" ><%= user.about %></textarea>
         <button type="submit" class="allbuttons">Submit</button>
       </form>
     </div>
