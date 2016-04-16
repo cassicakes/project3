@@ -32,6 +32,12 @@ h1 {
     <img class="bandimg" src="<%= artist.images[0].url%>">
     <div>
       <h1><%= artist.name %></h1>
+      <% tracks.forEach(function(track) { %>
+        <div class= "well">
+          <%= track.trackName %>
+          <audio controls src="<%= track.previewUrl %>"/>
+        </div>
+      <%});%>
       <form method="POST" action="/addtofavs">
         <input type="hidden" name="id" value="<%= artist.id %>">
         <input type="hidden" name="name" value="<%= artist.name %>">

@@ -140,12 +140,13 @@ app.get('/secret', function (req, res) {
 });
 
 app.get('/details/:id', function (req, res) {
-
   request('https://api.spotify.com/v1/artists/' + req.params.id + "/related-artists", function(err, response, body) {
     if (!err && response.statusCode === 200) {
       request('https://api.spotify.com/v1/artists/' + req.params.id, function(err2, response2, body2) {
         if (!err2 && response2.statusCode === 200) {
-         res.render('details', { artist: JSON.parse(body2), related: JSON.parse(body)}); 
+          var artist = JSON.parse(body2);
+          var related = JSON.parse(body);
+          getItunesData( artist, related, res)
         } else {
           req.flash('danger', "Error getting ya data yo!")
           res.redirect('/profile');
@@ -173,3 +174,12 @@ app.post('/addtofavs', function (req, res) {
 
 
 app.listen(process.env.PORT || 3000)
+
+//this is going to get all itunes data (tracks and albums) to diplay on page, keeping Itunes seperated from spotify
+function getItunesData( artist, related, res) {
+  // console.log(artist.name) testing 
+  request('https://itunes.apple.com/search?term=' + artist.name + "&entity=song&limit=5", function(err, response, body) {
+    var tracks = JSON.parse(body).results;
+    res.render('details', { artist: artist, related: related, tracks: tracks});
+  });
+};
