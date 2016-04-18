@@ -30,11 +30,11 @@ h1 {
   <img id="detailslogo" src="/images/banddetailslogo.png">
   <div  id="detailswell">
     <img class="bandimg" src="<%= artist.images[0].url%>">
-    <div>
+    <div class="container">
       <h1><%= artist.name %></h1>
       <% tracks.forEach(function(track) { %>
-        <div class= "well">
-          <%= track.trackName %>
+        <div id="trackwell" class= "well">
+          <%= track.trackName %><br>
           <audio controls src="<%= track.previewUrl %>"/>
         </div>
       <%});%>

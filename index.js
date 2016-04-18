@@ -154,10 +154,6 @@ app.get("/search", function (req, res ) {
   });
 });
 
-app.get('/secret', function (req, res) {
-  res.render('secret');
-});
-
 app.get('/details/:id', function (req, res) {
   request('https://api.spotify.com/v1/artists/' + req.params.id + "/related-artists", function(err, response, body) {
     if (!err && response.statusCode === 200) {
