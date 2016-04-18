@@ -17,15 +17,12 @@ video#bgvid {
 input::-webkit-input-placeholder {
 color: #B93717 !important;
 }
- 
 input:-moz-placeholder { /* Firefox 18- */
 color: #B93717 !important;  
 }
- 
 input::-moz-placeholder {  /* Firefox 19+ */
 color: #B93717 !important;  
 }
- 
 input:-ms-input-placeholder {  
 color: #B93717 !important;  
 }
@@ -67,7 +64,6 @@ color: #B93717 !important;
     margin-left: auto;
     margin-right: auto;
     height: 125px;
-    /*margin-top: -10px;*/
 }
 .groupbtns {
     text-align: center;
@@ -96,14 +92,10 @@ body {
     background-image: url("/images/backgroundshot.png");
     height: 100%;
     width: 100%;
-
-
 }
-
 .allbuttons {
     border-radius: 5px;
     margin-top: 11px;
-
 }
 .opcbg {
     height: 125%;
@@ -141,9 +133,7 @@ body {
     color: #B93717;
     text-align: left;
     font-size: 22px;
-    /*margin-top: 100px;*/
     margin-left: 8%;
-    /*top: 130px;*/
     margin: 6% auto !important;
 }
 #signuplogo {
@@ -153,7 +143,6 @@ body {
 }
 
 /*profile page*/
-
 #profilewell {
     background-color: #D8D8D8;
     border: 0;
@@ -161,18 +150,10 @@ body {
     min-height: 200px;
     height: 50%;
     color: #B93717;
-    /*font-size: 22px;*/
     position: relative;
     top: 130px;
     margin: 0 auto !important;
-    /*margin-left: 8%;*/
-/*    margin-top: 130px;
-*/    /*margin-left: 8%;*/
 }
-/*.profile {
-    text-align: center;
-
-}*/
 #profilelogo {
     height: 170px;
     width: 365px;
@@ -185,18 +166,15 @@ body {
     min-height: 200px;
     height: 50%;
     color: #B93717;
-    /*font-size: 22px;*/
     position: relative;
     top: 130px;
     margin: 2% auto !important;
-    /*margin-left: 8%;*/
 }
 #favoriteslogo {
     height: 170px;
     width: 365px;
     margin-top: -86px;
     float: right;
-    /*margin-left: 238px;*/
 }
 
 /*band details page */
@@ -212,7 +190,6 @@ body {
 #detailslogo {
     height: 170px;
     width: 365px;
-    /*margin-top: -92px;  */
     margin-bottom: -110px;
      display: inline-block;
 }
@@ -226,9 +203,7 @@ body {
 #relatedartistlogo {
     height: 170px;
     width: 365px;
-    /*margin-top: -92px;  */
     text-align: center;
-
     margin-bottom: -110px;
 }
 #detailsbtns {
@@ -240,7 +215,6 @@ body {
     height: 400px;
     width: 400px;
 }
-
 
 
 @media (max-width: 767px) {
